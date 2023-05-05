@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="MyAnimation">
+        <item name="android:windowEnterAnimation">@anim/anim_zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_zoom_in</item>
+        <item name="android:windowShowAnimation">@anim/anim_zoom_in</item>
+        <item name="android:animationDuration">40000</item>
+        <item name="android:windowTransitionBackgroundFadeDuration">4000</item>
+    </style>
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.SweetAppleAcres" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:popupElevation">0dp</item>
+        <item name="android:windowElevation">0dp</item>
+    </style>
+
+    <style name="BasicDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:popupElevation">0dp</item>
+        <item name="android:windowElevation">0dp</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <style name="FullscreenDialogStyle">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">
+            @anim/enter_slide_up
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/exit_slide_down
+        </item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">800dp</item>
+        <item name="background">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateVisible</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:popupElevation">0dp</item>
+        <item name="android:windowElevation">0dp</item>
+        <item name="behavior_draggable">true</item>
+        <item name="behavior_peekHeight">800dp</item>
+    </style>
+
+    <style name="TextStyle" />
+
+    <style name="TextStyle.Label">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_16sdp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/medium_text</item>
+    </style>
+
+    <style name="TextStyle.Message">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_16sdp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="TextStyle.Regular">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">@dimen/mini_small_text</item>
+    </style>
+
+    <style name="TextStyle.Title">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textSize">@dimen/xxx_large</item>
+    </style>
+
+    <style name="TextStyle.SubTitle">
+        <item name="android:textAppearance">
+            @style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">@dimen/large_text</item>
+    </style>
+
+    <style name="TextStyle.Normal">
+        <item name="android:textAppearance">
+            @style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle
+        </item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/large_text</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+
+    </style>
+
+
+
+</resources>

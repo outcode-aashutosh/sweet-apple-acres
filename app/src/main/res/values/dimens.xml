@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="min_clickable_size">48dp</dimen>
+    <dimen name="extra_mini">10sp</dimen>
+    <dimen name="mini_text">12sp</dimen>
+    <dimen name="chat_text">13sp</dimen>
+    <dimen name="mini_small_text">14sp</dimen>
+    <dimen name="small_text">16sp</dimen>
+    <dimen name="medium_text">18sp</dimen>
+    <dimen name="large_text">20sp</dimen>
+    <dimen name="x_large_text">22sp</dimen>
+    <dimen name="xx_large">24sp</dimen>
+    <dimen name="xxx_large">30sp</dimen>
+    <dimen name="sp_35sp">35sp</dimen>
+    <dimen name="xxxx_large">40sp</dimen>
+    <dimen name="fab_size">60dp</dimen>
+    <dimen name="chat_image">48dp</dimen>
+    <dimen name="toolbar_top">20dp</dimen>
+    <dimen name="alert_size">48dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>
