@@ -43,6 +43,14 @@ class ProductRemoteDataSourceImpl(
         }.flowOn(defaultDispatcher)
     }
 
+    override suspend fun browseProducts(search: String): Flow<Resource<ProductsListResponse>> {
+        return flow<Resource<ProductsListResponse>> {
+            emit(doTryCatch {
+                api.browseProducts(search).handleResponse()
+            })
+        }.flowOn(defaultDispatcher)
+    }
+
     override suspend fun getProductsById(productId: String): Flow<Resource<ProductDetailResponse>> {
         return flow {
             emit(doTryCatch {

@@ -3,6 +3,7 @@ package app.sweetappleacres.domain.repository
 import app.sweetappleacres.data.api.Resource
 import app.sweetappleacres.data.database.entities.ProductListEntity
 import app.sweetappleacres.data.handler.doTryCatch
+import app.sweetappleacres.data.response.ProductDetailResponse
 import app.sweetappleacres.data.response.ProductsListResponse
 import app.sweetappleacres.data.source.products.ProductsLocalDataSource
 import app.sweetappleacres.data.source.products.ProductsRemoteDataSource
@@ -14,8 +15,10 @@ import kotlinx.coroutines.flow.flowOn
 
 interface ProductsRepository {
     suspend fun persistProducts(): Flow<Resource<ProductsListResponse>>
+    suspend fun browseProducts(search: String): Flow<Resource<ProductsListResponse>>
     suspend fun getAllProducts(): Flow<Resource<List<ProductDomain>>>
-    suspend fun getProductsById(productId: String): Flow<Resource<ProductDomain>>
+    suspend fun getProductsByIdLocal(productId: String): Flow<Resource<ProductDomain>>
+    suspend fun getProductsByIdRemote(productId: String): Flow<Resource<ProductDetailResponse>>
 }
 
 class ProductsRepositoryImpl(
@@ -26,6 +29,10 @@ class ProductsRepositoryImpl(
 
     override suspend fun persistProducts(): Flow<Resource<ProductsListResponse>> {
         return productsRemoteDataSource.getAllProducts()
+    }
+
+    override suspend fun browseProducts(search: String): Flow<Resource<ProductsListResponse>> {
+        return productsRemoteDataSource.browseProducts(search)
     }
 
     override suspend fun getAllProducts(): Flow<Resource<List<ProductDomain>>> {
@@ -50,7 +57,7 @@ class ProductsRepositoryImpl(
         }
     }
 
-    override suspend fun getProductsById(productId: String): Flow<Resource<ProductDomain>> {
+    override suspend fun getProductsByIdLocal(productId: String): Flow<Resource<ProductDomain>> {
         return flow {
             emit(doTryCatch {
                 val item = productsLocalDataSource.getProductsById(productId)
@@ -67,6 +74,10 @@ class ProductsRepositoryImpl(
                 )
             })
         }.flowOn(defaultDispatcher)
+    }
+
+    override suspend fun getProductsByIdRemote(productId: String): Flow<Resource<ProductDetailResponse>> {
+        return productsRemoteDataSource.getProductsById(productId)
     }
 
 }

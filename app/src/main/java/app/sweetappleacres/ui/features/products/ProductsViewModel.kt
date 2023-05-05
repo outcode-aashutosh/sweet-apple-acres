@@ -24,7 +24,13 @@ class ProductsViewModel(private val repository: ProductsRepository) : ViewModel(
     }
 
     fun getCachedProductDetail(productId: String): LiveData<Resource<ProductDomain>> = liveData {
-        repository.getProductsById(productId).collect {
+        repository.getProductsByIdLocal(productId).collect {
+            emit(it)
+        }
+    }
+
+    fun browseProduct(search: String): LiveData<Resource<ProductsListResponse>> = liveData {
+        repository.browseProducts(search).collect {
             emit(it)
         }
     }

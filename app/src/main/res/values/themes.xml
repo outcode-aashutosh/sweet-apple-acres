@@ -12,7 +12,7 @@
         <item name="colorSecondary">@color/colorPrimaryDark</item>
         <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
         <item name="android:screenOrientation">portrait</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
@@ -137,6 +137,9 @@
 
     </style>
 
-
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/mdtp_light_gray</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
 
 </resources>

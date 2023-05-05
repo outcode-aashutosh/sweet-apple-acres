@@ -6,6 +6,7 @@ import app.sweetappleacres.data.response.ProductsListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ProductApi {
     companion object {
@@ -15,6 +16,11 @@ interface ProductApi {
 
     @GET(VIEW_PRODUCTS)
     suspend fun viewProducts(): Response<ProductsListResponse>
+
+    @GET(VIEW_PRODUCTS)
+    suspend fun browseProducts(
+        @Query("search") search: String,
+    ): Response<ProductsListResponse>
 
     @GET(VIEW_PRODUCT_DETAIL)
     suspend fun viewProductDetail(

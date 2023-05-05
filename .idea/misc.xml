@@ -8,6 +8,12 @@
         <entry key="app/src/main/res/drawable-v24/blank.xml" value="0.1145" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.552901023890785" />
         <entry key="app/src/main/res/layout/bg_rounded_white.xml" value="0.103125" />
+        <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.225" />
+        <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/item_product.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/item_product_grid.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/item_product_list.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/layout_progress_dialog.xml" value="0.103125" />
       </map>
     </option>
